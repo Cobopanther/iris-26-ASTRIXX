@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IRIS | Association Event</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#5D1F1E',
+            card: '#AB4F41',
+            cta: '#CB6F4A',
+            accent: '#EECB88'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-bgMain text-[#FFF5E6]">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="flex justify-between items-center px-8 py-6">
+    <h1 class="text-2xl font-extrabold text-accent">IRIS</h1>
+
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li><a href="#about" class="hover:text-accent">About</a></li>
+      <li><a href="#events" class="hover:text-accent">Events</a></li>
+      <li><a href="#schedule" class="hover:text-accent">Schedule</a></li>
+      <li>
+        <a href="#register" class="bg-cta px-5 py-2 rounded-lg text-white hover:opacity-90">
+          Register
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="text-center py-32 px-6">
+    <h1 class="text-6xl font-extrabold mb-6 text-accent">
+      IRIS
+    </h1>
+
+    <p class="text-xl mb-6 text-[#E7D8C9]">
+      Where Ideas Ignite & Creativity Converges
+    </p>
+
+    <p class="mb-10 text-[#E7D8C9]">
+      📅 March 2026 · 📍 Your College Name
+    </p>
+
+    <a href="#register"
+      class="bg-cta px-10 py-4 rounded-xl text-white font-semibold shadow-lg hover:scale-105 transition">
+      Register Now
+    </a>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about" class="px-8 py-24 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-extrabold mb-8 text-accent text-center">
+      About IRIS
+    </h2>
+
+    <p class="text-center text-lg text-[#E7D8C9] leading-relaxed max-w-4xl mx-auto">
+      IRIS is the flagship association event that brings together innovation,
+      creativity, and collaboration. Designed to inspire students across
+      disciplines, IRIS features technical challenges, engaging workshops,
+      and insightful sessions beyond the classroom.
+    </p>
+  </section>
+
+  <!-- ================= EVENTS SECTION ================= -->
+  <section id="events" class="px-8 py-24 bg-card">
+    <h2 class="text-4xl font-extrabold text-center mb-16 text-accent">
+      Events & Tracks
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+      <div class="bg-bgMain p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-2xl font-bold mb-4 text-accent">Hackathon</h3>
+        <p class="text-[#E7D8C9]">
+          A high-intensity innovation challenge where teams solve real-world
+          problems under time pressure.
+        </p>
+      </div>
+
+      <div class="bg-bgMain p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-2xl font-bold mb-4 text-accent">Workshops</h3>
+        <p class="text-[#E7D8C9]">
+          Hands-on sessions led by experts covering emerging technologies
+          and practical skills.
+        </p>
+      </div>
+
+      <div class="bg-bgMain p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-2xl font-bold mb-4 text-accent">Talk Sessions</h3>
+        <p class="text-[#E7D8C9]">
+          Inspiring talks from professionals sharing insights, experiences,
+          and career guidance.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SCHEDULE SECTION ================= -->
+  <section id="schedule" class="px-8 py-24">
+    <h2 class="text-4xl font-extrabold text-center mb-16 text-accent">
+      Event Schedule
+    </h2>
+
+    <div class="max-w-4xl mx-auto space-y-8">
+
+      <div class="flex items-start gap-6">
+        <div class="w-4 h-4 mt-2 bg-accent rounded-full"></div>
+        <div>
+          <h3 class="text-xl font-semibold">Inauguration</h3>
+          <p class="text-[#E7D8C9]">9:00 AM – Main Auditorium</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-6">
+        <div class="w-4 h-4 mt-2 bg-accent rounded-full"></div>
+        <div>
+          <h3 class="text-xl font-semibold">Events & Workshops</h3>
+          <p class="text-[#E7D8C9]">10:30 AM – Various Venues</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-6">
+        <div class="w-4 h-4 mt-2 bg-accent rounded-full"></div>
+        <div>
+          <h3 class="text-xl font-semibold">Guest Talk</h3>
+          <p class="text-[#E7D8C9]">3:00 PM – Seminar Hall</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= REGISTER SECTION ================= -->
+  <section id="register" class="px-8 py-24 bg-card text-center">
+    <h2 class="text-4xl font-extrabold mb-8 text-accent">
+      Register for IRIS
+    </h2>
+
+    <p class="text-lg text-[#E7D8C9] mb-10">
+      Be a part of an unforgettable experience. Limited slots available!
+    </p>
+
+    <a href="#" class="bg-cta px-12 py-4 rounded-xl text-white font-semibold hover:opacity-90">
+      Register Now
+    </a>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="text-center py-10 text-[#E7D8C9]">
+    © 2026 IRIS Association Event
+  </footer>
+
+</body>
+
+</html>
