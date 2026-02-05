@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Events from './components/Events'
+import Sponsors from './components/Sponsors'
 import CustomCursor from './components/CustomCursor'
 import MenuOverlay from './components/MenuOverlay'
 import Background3D from './components/Background3D.jsx'
@@ -109,30 +110,8 @@ function App() {
             <Hero />
             <Events />
 
-            {/* About / Lab Section Style */}
-            <section id="about" className="py-24 px-6 md:px-12 text-white min-h-screen flex items-center relative overflow-hidden">
-              <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 relative z-10">
-                <div className="md:w-1/3">
-                  <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
-                    <span className="block text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)]">THE</span>
-                    <span className="block">IDEA</span>
-                  </h2>
-                  <p className="text-gray-300 font-light text-sm tracking-wide leading-relaxed max-w-xs">
-                    IRIS is the flagship association event that brings together innovation, creativity, and collaboration.
-                  </p>
-                </div>
-
-                <div className="md:w-2/3 flex flex-col justify-between">
-                  <div className="text-2xl md:text-4xl font-light leading-snug mb-16">
-                    "Designed to <span className="text-brand-primary italic font-normal">inspire students</span> across disciplines, featuring technical challenges and engaging workshops."
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Decorative Blob */}
-              <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-brand-secondary to-transparent rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
-            </section>
+            {/* Sponsors Section */}
+            <Sponsors />
 
             {/* Footer Style */}
             <footer className="bg-black text-white pt-24 pb-12 px-6 border-t border-white/10">

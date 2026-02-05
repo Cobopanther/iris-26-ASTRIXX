@@ -88,13 +88,13 @@ export default function Hero() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-4 px-6 py-3 bg-black/[0.7] backdrop-blur-sm border border-white/10 rounded-full hover:bg-black/[1] transition-all duration-300 group cursor-pointer hover:border-brand-primary/30 hover:shadow-[0_0_15px_rgba(171,79,65,0.1)]"
                         >
-                            <motion.span
-                                className="text-brand-primary text-xl"
-                                animate={{ scale: [1, 1.2, 1], rotate: [0, 5, -5, 0] }}
+                            <motion.img
+                                src="/location-pin.png"
+                                alt="Location"
+                                className="w-8 h-8 object-contain"
+                                animate={{ scale: [1, 1.1, 1], translateY: [0, -3, 0] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                📍
-                            </motion.span>
+                            />
                             <div className="flex flex-col text-left">
                                 <span className="text-[10px] text-gray-500 uppercase tracking-widest font-mono group-hover:text-brand-primary transition-colors">Location</span>
                                 <span className="text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)] text-sm font-bold tracking-wide">Baselios Mathews II College of Engineering ,Sasthamcotta</span>
