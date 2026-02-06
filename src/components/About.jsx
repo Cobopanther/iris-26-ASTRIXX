@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from './Footer';
 
-const MemberCard = ({ name, role, className = "" }) => (
+const MemberCard = ({ name, role, className = "", image, batch }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -11,15 +11,18 @@ const MemberCard = ({ name, role, className = "" }) => (
         className={`group relative flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 ${className}`}
     >
         <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand-primary/20 to-brand-dark/20 border-2 border-white/10 group-hover:border-brand-accent/50 mb-4 overflow-hidden relative">
-            {/* Placeholder for Image */}
-            <div className="absolute inset-0 flex items-center justify-center text-white/20 text-xs">
-                PHOTO
-            </div>
+            {image ? (
+                <img src={image} alt={name} className="w-full h-full object-cover" />
+            ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-white/20 text-xs">
+                    PHOTO
+                </div>
+            )}
         </div>
 
-        <h3 className="text-white font-medium text-lg tracking-wide group-hover:text-brand-accent transition-colors">{name || "Name Needed"}</h3>
-        <p className="text-brand-primary text-sm font-mono tracking-wider uppercase mt-1">{role}</p>
-        <p className="text-gray-400 text-xs mt-2 font-light">Class / Year</p>
+        <h3 className="text-white font-medium text-lg tracking-wide group-hover:text-brand-accent transition-colors text-center">{name || "Name Needed"}</h3>
+        <p className="text-brand-primary text-sm font-mono tracking-wider uppercase mt-1 text-center">{role}</p>
+        <p className="text-gray-400 text-xs mt-2 font-light">{batch}</p>
     </motion.div>
 );
 
@@ -29,12 +32,50 @@ const SectionTitle = ({ children }) => (
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-primary mb-8"
+        id="members"
     >
         {children}
     </motion.h3>
 );
 
 const About = () => {
+
+    const executivePanel = [
+        { name: "Abhimanyu", role: "President", batch: "S8", image: "/1.png" },
+        { name: "Meenakshy M.S.", role: "Vice President", batch: "S6", image: "/15.png" },
+        { name: "Nandhana L", role: "Secretary", batch: "S8", image: "/2.png" },
+        { name: "Joel Pappachan Binu", role: "Joint Secretary", batch: "S6", image: "/5.png" },
+        { name: "Aswin", role: "Treasurer", batch: "S8", image: "" },
+        { name: "Alby Sajan Alex", role: "Treasurer", batch: "S8", image: "/10.png" },
+        { name: "Abhishek Bruno", role: "Joint Treasurer", batch: "S6", image: "/6.png" },
+    ];
+
+    const editorialBoard = [
+        { name: "Anand", role: "Editor", batch: "S6", image: "/3.png" },
+        { name: "Kelvin", role: "Editor", batch: "S8", image: "/7.png" },
+    ];
+
+    const organizingCommittee = [
+        { name: "Anandhu Anil", role: "Member", batch: "S8", image: "/4.png" },
+        { name: "Gouri Krishna", role: "Member", batch: "S8", image: "/11.png" },
+        { name: "Abhai", role: "Member", batch: "S8", image: "/9.png" },
+        { name: "Nakshatra B V", role: "Member", batch: "S6", image: "/14.png" },
+        { name: "Nikhil Nadh", role: "Member", batch: "S6", image: "/20.png" },
+        { name: "Jiorijin prakash", role: "Member", batch: "S4", image: "/8.png" },
+        { name: "Aneez", role: "Member", batch: "S4", image: "/19.png" },
+        { name: "Sreenandhan Ajay", role: "Member", batch: "S4", image: "/16.png" },
+        { name: "Basil", role: "Member", batch: "S6", image: "/17.png" },
+        { name: "Anandhu", role: "Member", batch: "S2", image: "/13.png" },
+    ];
+
+    const mediaWing = [
+        { name: "Akhin Cheriyan", role: "Media Head", batch: "S8", image: "/18.png" },
+        { name: "Athuljeev", role: "Media Head", batch: "S8", image: "/12.png" },
+        { name: "Jinu", role: "Media Head", batch: "", image: "" }, // No image/batch provided
+    ];
+
+
+
     return (
         <section className="relative w-full py-24 px-6 z-20" id="about">
             <div className="max-w-7xl mx-auto">
@@ -84,12 +125,13 @@ const About = () => {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <MemberCard role="President" />
-                            <MemberCard role="Vice President" />
-                            <MemberCard role="Secretary" />
-                            <MemberCard role="Joint Secretary" />
-                            <MemberCard role="Treasurer" />
-                            <MemberCard role="Joint Treasurer" />
+                            {executivePanel.map((member, i) => (
+                                <MemberCard
+                                    key={i}
+                                    {...member}
+                                    className={i === executivePanel.length - 1 ? "md:col-span-2 lg:col-span-3 lg:w-1/3 lg:mx-auto" : ""}
+                                />
+                            ))}
                         </div>
                     </div>
 
@@ -101,8 +143,9 @@ const About = () => {
                             <div className="h-[1px] flex-1 bg-white/10"></div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                            <MemberCard role="Editor" />
-                            <MemberCard role="Co-Editor" />
+                            {editorialBoard.map((member, i) => (
+                                <MemberCard key={i} {...member} />
+                            ))}
                         </div>
                     </div>
 
@@ -113,10 +156,33 @@ const About = () => {
                             <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Organizing Committee</h3>
                             <div className="h-[1px] flex-1 bg-white/10"></div>
                         </div>
-                        {/* Grid for 11 members: 3 rows of 4 (last row 3) or auto-fit */}
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {[...Array(11)].map((_, i) => (
-                                <MemberCard key={i} role={`Member ${i + 1}`} className="scale-90" />
+                            {organizingCommittee.map((member, i) => {
+                                let positionClasses = "";
+                                if (i === 8) positionClasses = "lg:col-start-2";
+                                if (i === 9) positionClasses = "md:col-start-2 lg:col-start-auto";
+
+                                return (
+                                    <MemberCard
+                                        key={i}
+                                        {...member}
+                                        className={`scale-90 ${positionClasses}`}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Media Wing */}
+                    <div>
+                        <div className="flex items-center gap-4 mb-10">
+                            <div className="h-[1px] w-12 bg-brand-primary"></div>
+                            <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Media Wing</h3>
+                            <div className="h-[1px] flex-1 bg-white/10"></div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {mediaWing.map((member, i) => (
+                                <MemberCard key={i} {...member} />
                             ))}
                         </div>
                     </div>
