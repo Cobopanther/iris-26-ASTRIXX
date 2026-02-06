@@ -1,13 +1,38 @@
 import { motion } from 'framer-motion'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 export default function MenuOverlay({ active, onClose }) {
+    const navigate = useNavigate()
+    const location = useLocation()
+
     const links = [
-        { title: "HOME", href: "#hero" },
-        { title: "EVENTS", href: "#events" },
-        { title: "ABOUT", href: "#about" },
-        { title: "SCHEDULE", href: "#schedule" },
-        { title: "REGISTER", href: "#register" }
+        { title: "HOME", path: "/", type: "route" },
+        { title: "EVENTS", path: "/#events", type: "hash" },
+        { title: "ABOUT", path: "/about", type: "route" },
+        { title: "SCHEDULE", path: "/#schedule", type: "hash" },
+        { title: "REGISTER", path: "/#register", type: "hash" }
     ]
+
+    const handleNavigation = (link) => {
+        onClose()
+        if (link.type === 'route') {
+            navigate(link.path)
+        } else {
+            // Handle Hash navigation
+            if (location.pathname !== '/') {
+                navigate('/')
+                setTimeout(() => {
+                    const id = link.path.replace('/#', '')
+                    const el = document.getElementById(id)
+                    if (el) el.scrollIntoView({ behavior: 'smooth' })
+                }, 100)
+            } else {
+                const id = link.path.replace('/#', '')
+                const el = document.getElementById(id)
+                if (el) el.scrollIntoView({ behavior: 'smooth' })
+            }
+        }
+    }
 
     const variants = {
         open: {
@@ -53,7 +78,7 @@ export default function MenuOverlay({ active, onClose }) {
                 }}
             >
                 {/* Overlay Bird Image */}
-                <img 
+                <img
                     src="/bird.png"
                     className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-[450px] md:h-[450px] opacity-50 pointer-events-none grayscale object-contain"
                 />
@@ -75,14 +100,13 @@ export default function MenuOverlay({ active, onClose }) {
                 >
                     {links.map((link) => (
                         <motion.li key={link.title} variants={itemVariants} className="overflow-hidden">
-                            <a
-                                href={link.href}
-                                onClick={onClose}
-                                className="text-3xl md:text-5xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 hover:from-brand-accent hover:to-brand-primary transition-all duration-300 block"
+                            <button
+                                onClick={() => handleNavigation(link)}
+                                className="text-3xl md:text-5xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 hover:from-brand-accent hover:to-brand-primary transition-all duration-300 block text-left"
                                 data-hover
                             >
                                 {link.title}
-                            </a>
+                            </button>
                         </motion.li>
                     ))}
                 </motion.ul>

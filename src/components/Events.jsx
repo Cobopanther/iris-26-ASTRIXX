@@ -26,7 +26,7 @@ function SectionHeader({ title, subtitle, align = "left" }) {
     )
 }
 
-function GridItem({ title, desc, index }) {
+function GridItem({ title, desc, index, image }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -39,8 +39,11 @@ function GridItem({ title, desc, index }) {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 z-10"></div>
 
             {/* Abstract Background for each card */}
-            <div className="absolute inset-0 bg-gray-dark opacity-30 group-hover:opacity-50 transition-opacity duration-500 transform group-hover:scale-110">
-                <div className={`w-full h-full bg-[url('https://source.unsplash.com/random/800x600?abstract,${index}')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700`}></div>
+            <div className="absolute inset-0 bg-gray-dark opacity-100 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-110">
+                <div
+                    className={`w-full h-full bg-cover bg-center transition-all duration-700`}
+                    style={{ backgroundImage: `url('${image || `https://source.unsplash.com/random/800x600?abstract,${index}`}')` }}
+                ></div>
             </div>
 
             <div className="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -58,8 +61,8 @@ export default function Events() {
     const containerRef = useRef(null)
 
     const events = [
-        { title: "CONCLAVE", desc: "A prestigious gathering of thought leaders and innovators." },
-        { title: "IDEATHON", desc: "Where disruptive ideas take flight and find their path." },
+        { title: "CONCLAVE", desc: "A prestigious gathering of thought leaders and innovators.", image: "/conclave-poster.jpeg" },
+        { title: "IDEATHON", desc: "Where disruptive ideas take flight and find their path.", image: "/ideathon-poster.jpeg" },
         { title: "WORKSHOP SERIES", desc: "Deep dives into cutting-edge technology and creative skills." },
         { title: "HACKATHON", desc: "The ultimate 24h test of technical prowess and collaboration." }
     ]
