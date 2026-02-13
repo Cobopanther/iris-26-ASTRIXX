@@ -62,9 +62,16 @@ export default function Events() {
 
     const events = [
         { title: "CONCLAVE", desc: "A prestigious gathering of thought leaders and innovators.", image: "/conclave-poster.jpeg" },
-        { title: "IDEATHON", desc: "Where disruptive ideas take flight and find their path.", image: "/ideathon-poster.jpeg" },
+        { title: "IDEATHON", desc: "Where disruptive ideas take flight and find their path.", image: "/idea.jpeg" },
         { title: "WORKSHOP SERIES", desc: "Deep dives into cutting-edge technology and creative skills." },
         { title: "HACKATHON", desc: "The ultimate 24h test of technical prowess and collaboration." }
+    ]
+
+    const inHouseEvents = [
+        { title: "QUIZ COMP", desc: "Test your tech knowledge against the best." },
+        { title: "DEBUGGING", desc: "Find the bugs before they find you." },
+        { title: "LOGO DESIGN", desc: "Craft the identity of tomorrow." },
+        { title: "CTF", desc: "Capture the Flag: Security challenge." },
     ]
 
     return (
@@ -76,6 +83,17 @@ export default function Events() {
                     {events.map((event, i) => (
                         <GridItem key={i} index={i} {...event} />
                     ))}
+                </div>
+
+                {/* In-House Talent Hunt Section */}
+                <div className="mt-32">
+                    <SectionHeader title="TALENT HUNT" subtitle="Iris In-House • BMCE Exclusive" align="right" />
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {inHouseEvents.map((event, i) => (
+                            <GridItem key={i} index={i} {...event} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

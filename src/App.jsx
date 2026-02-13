@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
+import Schedule from './components/Schedule'
 import CustomCursor from './components/CustomCursor'
 import MenuOverlay from './components/MenuOverlay'
 import Background3D from './components/Background3D.jsx'
@@ -140,6 +141,7 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/schedule" element={<Schedule />} />
           </Routes>
         </motion.div>
       )}

@@ -7,10 +7,10 @@ export default function MenuOverlay({ active, onClose }) {
 
     const links = [
         { title: "HOME", path: "/", type: "route" },
-        { title: "EVENTS", path: "/#events", type: "hash" },
+        { title: "EVENTS", path: "#events", type: "hash" },
         { title: "ABOUT", path: "/about", type: "route" },
-        { title: "SCHEDULE", path: "/#schedule", type: "hash" },
-        { title: "REGISTER", path: "/#register", type: "hash" }
+        { title: "SCHEDULE", path: "/schedule", type: "route" },
+        { title: "REGISTER", path: "#register", type: "hash" }
     ]
 
     const handleNavigation = (link) => {
@@ -18,16 +18,16 @@ export default function MenuOverlay({ active, onClose }) {
         if (link.type === 'route') {
             navigate(link.path)
         } else {
-            // Handle Hash navigation
+            const id = link.path.replace('#', '')
+
             if (location.pathname !== '/') {
                 navigate('/')
+                // Wait for navigation to complete before scrolling
                 setTimeout(() => {
-                    const id = link.path.replace('/#', '')
                     const el = document.getElementById(id)
                     if (el) el.scrollIntoView({ behavior: 'smooth' })
-                }, 100)
+                }, 500)
             } else {
-                const id = link.path.replace('/#', '')
                 const el = document.getElementById(id)
                 if (el) el.scrollIntoView({ behavior: 'smooth' })
             }
