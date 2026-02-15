@@ -85,15 +85,31 @@ function BirdParticles() {
         }
     }, [])
 
-    // Global mouse tracking to work behind overlays
+    // Global mouse and touch tracking to work behind overlays
     useEffect(() => {
         const handleMouseMove = (event) => {
             // Normalize mouse coordinates (-1 to +1)
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
         }
+
+        const handleTouchMove = (event) => {
+            if (event.touches.length > 0) {
+                const touch = event.touches[0]
+                mouse.x = (touch.clientX / window.innerWidth) * 2 - 1
+                mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1
+            }
+        }
+
         window.addEventListener('mousemove', handleMouseMove)
-        return () => window.removeEventListener('mousemove', handleMouseMove)
+        window.addEventListener('touchmove', handleTouchMove, { passive: false })
+        window.addEventListener('touchstart', handleTouchMove, { passive: false })
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove)
+            window.removeEventListener('touchmove', handleTouchMove)
+            window.removeEventListener('touchstart', handleTouchMove)
+        }
     }, [])
 
     const mouse = useMemo(() => new THREE.Vector2(9999, 9999), []) // Start off-screen
