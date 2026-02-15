@@ -97,7 +97,7 @@ export default function Hero() {
                             />
                             <div className="flex flex-col text-left">
                                 <span className="text-[10px] text-gray-500 uppercase tracking-widest font-mono group-hover:text-brand-primary transition-colors">Location</span>
-                                <span className="text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)] text-sm font-bold tracking-wide">Baselios Mathews II College of Engineering ,Sasthamcotta</span>
+                                <span className="text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)] text-sm font-bold tracking-wide whitespace-normal break-words max-w-[60vw] md:max-w-none">Baselios Mathews II College of Engineering ,Sasthamcotta</span>
                             </div>
                         </a>
                     </div>

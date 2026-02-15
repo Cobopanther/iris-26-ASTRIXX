@@ -53,9 +53,9 @@ const About = () => {
     ];
 
     const executivePanel = [
-        { name: "Abhimanyu", role: "President", batch: "S8", image: "/1.png" },
-        { name: "Meenakshy M.S.", role: "Vice President", batch: "S6", image: "/15.png" },
-        { name: "Nandhana L", role: "Secretary", batch: "S8", image: "/2.png" },
+        { name: "Abhimanyu S", role: "President", batch: "S8", image: "/1.png" },
+        { name: "Meenakshy M S", role: "Vice President", batch: "S6", image: "/15.png" },
+        { name: "Nandana L", role: "Secretary", batch: "S8", image: "/2.png" },
         { name: "Joel Pappachan Binu", role: "Joint Secretary", batch: "S6", image: "/5.png" },
         { name: "Aswin S", role: "Treasurer", batch: "S8", image: "/21.png", zoom: 3 },
         { name: "Alby Sajan Alex", role: "Treasurer", batch: "S8", image: "/10.png" },
@@ -65,6 +65,12 @@ const About = () => {
     const editorialBoard = [
         { name: "Anand", role: "Editor", batch: "S6", image: "/3.png" },
         { name: "Kelvin Kunjumon", role: "Editor", batch: "S8", image: "/7.png" },
+    ];
+
+    const staffCoordinators = [
+        { name: "Dr. Kavitha V K", role: "Head of Department", image: "/kavi.png" },
+        { name: "Prof. Jayakrishnan R.", role: "Staff Coordinator", image: "/jk.png" },
+        { name: "Prof. Aswathy Anand", role: "Staff Coordinator", image: "/asw.png" },
     ];
 
     const organizingCommittee = [
@@ -78,6 +84,9 @@ const About = () => {
         { name: "Sreenandhan A", role: "Member", batch: "S4", image: "/16.png" },
         { name: "Muhammed Basil", role: "Member", batch: "S6", image: "/17.png" },
         { name: "Anandha Krishnan", role: "Member", batch: "S2", image: "/13.png" },
+        { name: "Nimisha Pramod", role: "Member", batch: "S2", image: "/23.png" },
+        { name: "Abikrishna K B", role: "Member", batch: "S2", image: "/24.png" },
+        { name: "Anandhu Rajesh", role: "Member", batch: "S2", image: "/25.png" },
     ];
 
     const mediaWing = [
@@ -92,16 +101,16 @@ const About = () => {
         { name: "Nandana L", image: "/2.png" },
         { name: "Kelvin Kunjumon", image: "/7.png" },
         { name: "Meenakshy M S", image: "/15.png" },
-        { name: "Joel Pappachan", image: "/5.png" },
+        { name: "Joel Pappachan Binu", image: "/5.png" },
         { name: "Nikhil Nadh", image: "/20.png" },
     ];
 
     const irisProgram = [
-        { name: "Anandu Anil", image: "/4.png" },
+        { name: "Anandhu Anil", image: "/4.png" },
         { name: "Gouri Krishna", image: "/11.png" },
         { name: "Abhai Clement", image: "/9.png" },
         { name: "Aswin S", image: "/21.png", zoom: 3 },
-        { name: "Nakshatra", image: "/14.png" },
+        { name: "Nakshatra B V", image: "/14.png" },
         { name: "Anand", image: "/3.png" },
         { name: "Abhishek Bruno", image: "/6.png" },
         { name: "Muhammed Basil", image: "/17.png" },
@@ -125,18 +134,17 @@ const About = () => {
     ];
 
     const irisPromotion = [
-        { name: "Alby Sajan", role: "Head", image: "/10.png" },
+        { name: "Alby Sajan Alex", role: "Head", image: "/10.png" },
         { name: "Anand", role: "Head", image: "/3.png" },
         { name: "Aby John", image: "" },
         { name: "Amal Shaji", image: "" },
         { name: "Akhin Cheriyan", image: "/18.png" },
-        { name: "Alphy sajan", image: "" },
+        { name: "Alphy Sajan", image: "" },
         { name: "Abhishek Bruno", image: "/6.png" },
         { name: "Adithyan S Prathap", image: "" },
         { name: "Joel Mathew", image: "" },
-        { name: "Alby sajan", image: "/10.png" },
         { name: "Sreenandhan A", image: "/16.png" },
-        { name: "Joel k jose", image: "" },
+        { name: "Joel K Jose", image: "" },
     ];
 
 
@@ -253,19 +261,13 @@ const About = () => {
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                    {organizingCommittee.map((member, i) => {
-                                        let positionClasses = "";
-                                        if (i === 8) positionClasses = "lg:col-start-2";
-                                        if (i === 9) positionClasses = "md:col-start-2 lg:col-start-auto";
-
-                                        return (
-                                            <MemberCard
-                                                key={i}
-                                                {...member}
-                                                className={`scale-90 ${positionClasses}`}
-                                            />
-                                        );
-                                    })}
+                                    {organizingCommittee.map((member, i) => (
+                                        <MemberCard
+                                            key={i}
+                                            {...member}
+                                            className="scale-90"
+                                        />
+                                    ))}
                                 </div>
                             </div>
 
@@ -285,18 +287,29 @@ const About = () => {
                         </motion.div>
                     )}
 
-                    {/* Staff Coordinators (Placeholder) */}
+                    {/* Staff Coordinators */}
                     {activeTab === "staff" && (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="flex flex-col items-center justify-center py-20 text-center space-y-4"
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.5 }}
                         >
-                            <div className="text-6xl mb-4 opacity-20">👨‍🏫</div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Staff Coordinators</h3>
-                            <p className="text-gray-400 font-light max-w-md mx-auto">
-                                Details about our esteemed staff coordinators will be updated shortly.
-                            </p>
+                            <div className="flex items-center gap-4 mb-10">
+                                <div className="h-[1px] w-12 bg-brand-primary"></div>
+                                <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Our Faculty</h3>
+                                <div className="h-[1px] flex-1 bg-white/10"></div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                                {staffCoordinators.map((member, i) => (
+                                    <MemberCard
+                                        key={i}
+                                        {...member}
+                                        className={i === 0 ? "md:col-span-2 w-full md:w-1/2 lg:w-1/2 mx-auto scale-110 mb-8 border-brand-accent/40" : ""}
+                                    />
+                                ))}
+                            </div>
                         </motion.div>
                     )}
 

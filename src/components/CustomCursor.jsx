@@ -82,6 +82,6 @@ export default function CustomCursor() {
     }, [])
 
     return (
-        <div ref={cursorRef} className="cursor" style={{ opacity: 0 }}></div>
+        <div ref={cursorRef} className="cursor hidden md:block" style={{ opacity: 0 }}></div>
     )
 }

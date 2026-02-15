@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 const sponsorsData = [
     {
         category: "Title Sponsor",
-        logos: ["Title Corp"]
+        logos: ["/NAVINORA LOGO_Multi_2.png"]
     },
     {
         category: "Associate Sponsors",
-        logos: ["Associate A", "Associate B", "Associate C", "Associate D"]
+        logos: ["/eschool.png", "/varts.png"]
     }
 ]
 
@@ -45,37 +45,39 @@ export default function Sponsors() {
                                 </h3>
 
                                 {/* Medium Individual Box for Category */}
-                                <div className="bg-black/20 border border-white/5 rounded-xl py-10 relative overflow-hidden">
-                                    {/* Fading Edges for Marquee */}
-                                    <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/20 to-transparent z-10"></div>
-                                    <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black/20 to-transparent z-10"></div>
-
-                                    {/* Marquee Content */}
-                                    <div className="flex overflow-hidden">
-                                        <motion.div
-                                            className="flex gap-16 px-6 min-w-full"
-                                            animate={{ x: ["0%", "-50%"] }}
-                                            transition={{
-                                                repeat: Infinity,
-                                                ease: "linear",
-                                                duration: 20 + (idx * 5) // Vary speeds slightly
-                                            }}
-                                        >
-                                            {/* Repeat logos enough times to ensure smooth loop especially for single items */}
-                                            {/* If few items, repeat more times to fill width */}
-                                            {[...category.logos, ...category.logos, ...category.logos, ...category.logos, ...category.logos, ...category.logos, ...category.logos, ...category.logos].map((logo, i) => (
+                                <div className={`bg-black/20 border border-white/5 rounded-xl relative overflow-hidden flex justify-center items-center ${category.category === "Title Sponsor" ? "py-6 max-w-3xl mx-auto w-full" : "py-10"}`}>
+                                    {category.category === "Title Sponsor" ? (
+                                        <div className="w-full max-w-md h-40 flex items-center justify-center p-4 group">
+                                            {category.logos[0].includes('/') ? (
+                                                <img
+                                                    src={category.logos[0]}
+                                                    alt="Title Sponsor"
+                                                    className="w-full h-full object-contain scale-[1.5] group-hover:scale-[1.65] transition-all duration-700"
+                                                />
+                                            ) : (
+                                                <span className="text-4xl text-gray-500 font-mono group-hover:text-brand-accent transition-colors">
+                                                    {category.logos[0]}
+                                                </span>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <div className="flex flex-wrap justify-center gap-8 px-6 w-full">
+                                            {category.logos.map((logo, i) => (
                                                 <div
                                                     key={i}
-                                                    className="flex-shrink-0 w-56 h-28 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg flex items-center justify-center group hover:bg-white/10 transition-colors cursor-pointer"
+                                                    className="flex-shrink-0 w-56 h-28 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg flex items-center justify-center group hover:bg-white/10 transition-colors cursor-pointer p-4"
                                                 >
-                                                    {/* Placeholder for Logo Image */}
-                                                    <span className="text-gray-500 font-mono text-sm group-hover:text-brand-accent transition-colors">
-                                                        {logo}
-                                                    </span>
+                                                    {logo.includes('/') ? (
+                                                        <img src={logo} alt="Sponsor Logo" className="w-full h-full object-contain scale-[2.0] group-hover:scale-[2.2] transition-all duration-300" />
+                                                    ) : (
+                                                        <span className="text-gray-500 font-mono text-sm group-hover:text-brand-accent transition-colors">
+                                                            {logo}
+                                                        </span>
+                                                    )}
                                                 </div>
                                             ))}
-                                        </motion.div>
-                                    </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}
