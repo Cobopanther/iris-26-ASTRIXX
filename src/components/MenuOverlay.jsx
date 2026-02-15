@@ -57,10 +57,8 @@ export default function MenuOverlay({ active, onClose }) {
 
     return (
         <motion.div
-            className="fixed top-1/2 left-0 -translate-y-1/2 z-[60] overflow-hidden"
+            className="fixed top-1/2 left-0 -translate-y-1/2 z-[60] overflow-hidden h-[60vh] md:h-[80vh] w-[80vw] md:w-[500px]"
             style={{
-                height: '80vh',
-                width: '500px',
                 borderTopRightRadius: '50% 50%',
                 borderBottomRightRadius: '50% 50%',
                 paddingRight: '2px', // Space for gradient border
