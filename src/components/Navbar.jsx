@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar({ onMenuClick }) {
     return (
-        <nav className="fixed top-0 left-0 w-full z-40 px-8 py-6 flex justify-between items-center mix-blend-difference text-white pointer-events-none">
-            <div className="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors duration-300 pointer-events-auto cursor-pointer">
+        <nav className="fixed top-0 left-0 w-full z-40 px-8 py-6 flex justify-between items-center text-white pointer-events-none">
+            <div className="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors duration-300 pointer-events-auto cursor-pointer mix-blend-difference">
                 IRIS
             </div>
 
             {/* Middle Left Bird Menu Trigger */}
             <button
                 onClick={onMenuClick}
-                className="fixed top-1/2 left-0 -translate-y-1/2 pointer-events-auto z-50 group focus:outline-none"
+                className="fixed top-1/2 left-0 -translate-y-1/2 pointer-events-auto z-50 group focus:outline-none mix-blend-normal"
                 data-hover
             >
                 <div className="relative p-[1px] bg-gradient-to-b from-[#5D1F1E] via-[#CB6F4A] to-[#EECB88] rounded-r-2xl transition-transform duration-500 group-hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(171,79,65,0.2)] bg-black">
