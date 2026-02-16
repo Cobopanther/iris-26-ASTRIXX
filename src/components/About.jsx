@@ -8,7 +8,7 @@ const MemberCard = ({ name, role, className = "", image, batch, zoom }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`group relative flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 ${className}`}
+        className={`group relative flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 w-full sm:w-[280px] ${className}`}
     >
         <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand-primary/20 to-brand-dark/20 border-2 border-white/10 group-hover:border-brand-accent/50 mb-4 overflow-hidden relative">
             {image ? (
@@ -121,27 +121,35 @@ const About = () => {
         { name: "Meenakshy M S", role: "Head", image: "/15.png" },
         { name: "Nakshatra B V", role: "Head", image: "/14.png" },
         { name: "Gouri Bhaskar", image: "" },
-        { name: "Akhin Cheriyan", image: "/18.png" },
-        { name: "Aby John", image: "" },
-        { name: "Jeen", image: "" },
+        { name: "Aby John", image: "/aby.png" },
         { name: "Jinu J", image: "/22.png", zoom: 3 },
-        { name: "Amal Shaji", image: "" },
-        { name: "Abhinav", image: "" },
+        { name: "Amal Shaji", image: "/amalshajii.png" },
+        { name: "Abhinav", image: "/abhinav.png" },
         { name: "Abul Gaiz", image: "" },
-        { name: "Job T Biju", image: "" },
-        { name: "Rijin Reji", image: "" },
+        { name: "Job T Biju", image: "/job.png" },
+        { name: "Rijin Reji", image: "/rijin.png" },
         { name: "Athuljeev S", image: "/12.png" },
+        { name: "Akhin Cheriyan", image: "/18.png" },
+    ];
+
+    const irisVideoPromoters = [
+        { name: "Adithyan R", image: "/adithyanr.png" },
+        { name: "Abhinav", image: "/abhinav.png" },
+        { name: "Devadethan A", image: "/devadethan.png" },
+        { name: "Jeen George Mathunny", image: "/jeen.png" },
+        { name: "Nandana S R", image: "/nandana.png" },
+        { name: "Meenakshy M S", image: "/15.png" },
     ];
 
     const irisPromotion = [
         { name: "Alby Sajan Alex", role: "Head", image: "/10.png" },
         { name: "Anand", role: "Head", image: "/3.png" },
-        { name: "Aby John", image: "" },
-        { name: "Amal Shaji", image: "" },
+        { name: "Aby John", image: "/aby.png" },
+        { name: "Amal Shaji", image: "/amalshajii.png" },
         { name: "Akhin Cheriyan", image: "/18.png" },
-        { name: "Alphy Sajan", image: "" },
+        { name: "Alphy Sajan", image: "/alphy.png", zoom: 1.2 },
         { name: "Abhishek Bruno", image: "/6.png" },
-        { name: "Adithyan S Prathap", image: "" },
+        { name: "Adithyan S Prathap", image: "/adhiprathap.png" },
         { name: "Joel Mathew", image: "" },
         { name: "Sreenandhan A", image: "/16.png" },
         { name: "Joel K Jose", image: "" },
@@ -228,12 +236,11 @@ const About = () => {
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div className="flex flex-wrap justify-center gap-6">
                                     {executivePanel.map((member, i) => (
                                         <MemberCard
                                             key={i}
                                             {...member}
-                                            className={i === executivePanel.length - 1 ? "md:col-span-2 lg:col-span-3 lg:w-1/3 lg:mx-auto" : ""}
                                         />
                                     ))}
                                 </div>
@@ -246,7 +253,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Editorial Board</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                                <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
                                     {editorialBoard.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
@@ -260,7 +267,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Organizing Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <div className="flex flex-wrap justify-center gap-4">
                                     {organizingCommittee.map((member, i) => (
                                         <MemberCard
                                             key={i}
@@ -278,7 +285,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Media Wing</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="flex flex-wrap justify-center gap-6">
                                     {mediaWing.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
@@ -301,12 +308,12 @@ const About = () => {
                                 <div className="h-[1px] flex-1 bg-white/10"></div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            <div className="flex flex-wrap justify-center gap-x-8 gap-y-12 max-w-5xl mx-auto">
                                 {staffCoordinators.map((member, i) => (
                                     <MemberCard
                                         key={i}
                                         {...member}
-                                        className={i === 0 ? "md:col-span-2 w-full md:w-1/2 lg:w-1/2 mx-auto scale-110 mb-8 border-brand-accent/40" : ""}
+                                        className={i === 0 ? "w-full md:w-[320px] scale-110 mb-8 border-brand-accent/40" : ""}
                                     />
                                 ))}
                             </div>
@@ -329,7 +336,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Core Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div className="flex flex-wrap justify-center gap-6">
                                     {irisCore.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
@@ -343,7 +350,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Program Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <div className="flex flex-wrap justify-center gap-4">
                                     {irisProgram.map((member, i) => (
                                         <MemberCard key={i} {...member} className="scale-90" />
                                     ))}
@@ -357,8 +364,22 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Media & Design Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <div className="flex flex-wrap justify-center gap-4">
                                     {irisMedia.map((member, i) => (
+                                        <MemberCard key={i} {...member} className="scale-90" />
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Our Video Promoters */}
+                            <div>
+                                <div className="flex items-center gap-4 mb-10">
+                                    <div className="h-[1px] w-12 bg-brand-primary"></div>
+                                    <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Our Video Promoters</h3>
+                                    <div className="h-[1px] flex-1 bg-white/10"></div>
+                                </div>
+                                <div className="flex flex-wrap justify-center gap-4">
+                                    {irisVideoPromoters.map((member, i) => (
                                         <MemberCard key={i} {...member} className="scale-90" />
                                     ))}
                                 </div>
@@ -371,7 +392,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Promotion Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <div className="flex flex-wrap justify-center gap-4">
                                     {irisPromotion.map((member, i) => (
                                         <MemberCard key={i} {...member} className="scale-90" />
                                     ))}

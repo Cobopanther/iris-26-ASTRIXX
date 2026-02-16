@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function Navbar({ onMenuClick, toggleTheme }) {
+export default function Navbar({ onMenuClick }) {
     return (
         <nav className="fixed top-0 left-0 w-full z-40 px-8 py-6 flex justify-between items-center text-white pointer-events-none">
 

@@ -4,14 +4,9 @@
 
 :root {
   --cursor-size: 24px;
-  --rgb-white: 255 255 255;
-  --rgb-black: 0 0 0;
+  --white: #ffffff;
+  --black: #000000;
   --gray: #808080;
-}
-
-[data-theme='light'] {
-  --rgb-black: 255 255 255;
-  --rgb-white: 0 0 0;
 }
 
 body {
@@ -19,8 +14,8 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgb(var(--rgb-black));
-  color: rgb(var(--rgb-white));
+  background-color: #000;
+  color: #fff;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   cursor: auto;
@@ -57,7 +52,7 @@ body {
   background: var(--white);
   mix-blend-mode: difference;
   pointer-events: none;
-  z-index: 19999;
+  z-index: 99999;
   transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   /* Removed will-change for transform to allow smoother rotation updates in some browsers */
 }

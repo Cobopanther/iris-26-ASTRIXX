@@ -102,17 +102,7 @@ function Loader({ onComplete }) {
 function AppContent() {
   const [loading, setLoading] = useState(true)
   const [menuActive, setMenuActive] = useState(false)
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
   const location = useLocation()
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-  }, [theme])
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
-  }
 
   // Lock body scroll when menu is active or loading
   useEffect(() => {
@@ -145,7 +135,7 @@ function AppContent() {
         >
           <div className="noise-overlay"></div>
 
-          <Navbar onMenuClick={() => setMenuActive(true)} toggleTheme={toggleTheme} />
+          <Navbar onMenuClick={() => setMenuActive(true)} />
           <MenuOverlay active={menuActive} onClose={() => setMenuActive(false)} />
 
           <Routes>

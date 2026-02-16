@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from 'framer-motion'
+import { useSearchParams } from 'react-router-dom'
 import TiltedCard from './TiltedCard'
 import Aurora from './Aurora'
 
@@ -146,10 +147,32 @@ function EventModal({ event, onClose }) {
                         </p>
                     </div>
 
-                    <div className="p-6 md:p-8 border-t border-white/10 bg-black/40 backdrop-blur-md shrink-0 z-10 w-full">
-                        <button className="px-8 py-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold tracking-widest uppercase rounded-lg hover:shadow-[0_0_20px_rgba(171,79,65,0.5)] transform hover:-translate-y-1 transition-all duration-300 border border-white/10 w-full md:w-auto text-center">
-                            Register Now
-                        </button>
+                    <div className="p-6 md:p-8 border-t border-white/10 bg-black/40 backdrop-blur-md shrink-0 z-10 w-full flex flex-col sm:flex-row gap-4">
+                        {event.link ? (
+                            <a
+                                href={event.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 px-8 py-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold tracking-widest uppercase rounded-lg hover:shadow-[0_0_20px_rgba(171,79,65,0.5)] transform hover:-translate-y-1 transition-all duration-300 border border-white/10 flex items-center justify-center text-center"
+                            >
+                                Register Now
+                            </a>
+                        ) : (
+                            <button className="flex-1 px-8 py-4 bg-gray-600 text-white/50 font-bold tracking-widest uppercase rounded-lg cursor-not-allowed border border-white/5 flex items-center justify-center text-center">
+                                Registration Closed
+                            </button>
+                        )}
+
+                        {event.rules && (
+                            <a
+                                href={event.rules}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 px-8 py-4 bg-white/5 hover:bg-white/10 text-brand-accent font-bold tracking-widest uppercase rounded-lg border border-brand-accent/30 hover:border-brand-accent/60 transition-all duration-300 flex items-center justify-center text-center"
+                            >
+                                Rules & Guidelines
+                            </a>
+                        )}
                     </div>
                 </div>
             </motion.div>
@@ -159,6 +182,7 @@ function EventModal({ event, onClose }) {
 
 export default function Events() {
     const containerRef = useRef(null)
+    const [searchParams, setSearchParams] = useSearchParams()
     const [selectedEvent, setSelectedEvent] = useState(null)
 
     // Prevent body scroll when modal is open
@@ -170,11 +194,37 @@ export default function Events() {
         }
     }, [selectedEvent])
 
+    // Sync search params with selected event
+    useEffect(() => {
+        const eventId = searchParams.get('event')
+        if (eventId) {
+            const allEvents = [...events, ...inHouseEvents]
+            const event = allEvents.find(e => e.id === eventId)
+            if (event) {
+                setSelectedEvent(event)
+            } else {
+                setSelectedEvent(null)
+            }
+        } else {
+            setSelectedEvent(null)
+        }
+    }, [searchParams])
+
+    const handleEventClick = (event) => {
+        setSearchParams({ event: event.id })
+    }
+
+    const handleCloseModal = () => {
+        setSearchParams({})
+    }
+
     const events = [
         {
+            id: "conclave",
             title: "CONCLAVE",
             desc: "A prestigious gathering of thought leaders and innovators.",
             image: "/conclave.jpeg",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSegBDvQd3IiKJn4kj59F63uTzaDfQgqQLHm1Uu-IExTPvQFMA/viewform",
             details: `🎤✨ IRIS’26 – CONCLAVE 2026 ✨🎤
 
 🏛️ Baselios Mathews II College of Engineering, Sasthamcotta, Kerala
@@ -204,9 +254,12 @@ Dr. Anoop Sreekumar – 97863 95590
 Kelvin Kunjumon – 73068 80119`
         },
         {
+            id: "ideathon",
             title: "IDEATHON",
             desc: "Where disruptive ideas take flight and find their path.",
             image: "/ideath.jpeg",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSdal1KTksC3k5oRRcggCDWGSz9kP69J0e7Agjs3stMYJMtNhQ/viewform",
+            rules: "/IRIS'26_Ideathon_Rules&Guidelines.pdf",
             details: `✨ IDEATHON 2026 – IRIS’26 ✨
 🏛️ Department of CSE
 💡 Astrixx – CSE Association
@@ -234,16 +287,19 @@ For assistance regarding IRIS'26 – IDEATHON 2026 registration, payment confirm
 Aswin S: +91 9188237299
 Prof. Greeshma Chacko: +91 99466 85090`
         },
-        { title: "WORKSHOP SERIES", desc: "Deep dives into cutting-edge technology and creative skills." },
-        { title: "HACKATHON", desc: "The ultimate 24h test of technical prowess and collaboration." }
+        { id: "workshop", title: "WORKSHOP SERIES", desc: "Deep dives into cutting-edge technology and creative skills." },
+        { id: "hackathon", title: "HACKATHON", desc: "The ultimate 24h test of technical prowess and collaboration." }
     ]
 
     const inHouseEvents = [
         {
+            id: "quiz",
             title: "QUIZ",
             desc: "Test your tech knowledge against the best.",
             image: "/quiz.jpeg",
             mobileImgClass: "max-md:object-[center_20%]",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSezhSeZx6PMdbAlcVSH2NTa8DsMG2FXm7isq_7lZAIjSzVxFA/viewform",
+            rules: "/quiz rules and guidelines.pdf",
             details: `🧠✨IRIS'26 IN HOUSE TALENT HUNT QUIZ COMPETITION
 
 Baselios Mathews II College of Engineering 
@@ -275,9 +331,12 @@ Nandana L : 9072153040
 Prof. Gimy Jacob : 81292 68266`
         },
         {
+            id: "debugging",
             title: "DEBUGGING",
             desc: "Find the bugs before they find you.",
             image: "/debugg.jpeg",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSdd-YUds6d2fHOCwNBnVe0fT86T98LN5rFQnaSldME7Nc-W1A/viewform",
+            rules: "/DebuggingContestGuidelines.pdf",
             details: `🐞✨ IRIS’26 IN-HOUSE TALENT HUNT – *DEBUGGING COMPETITION* ✨🐞
 
 🏛️ Baselios Mathews II College of Engineering
@@ -307,9 +366,12 @@ Prof. Anila Kunjumon – 7510533698
 Abhijith M.S – 94964 33104`
         },
         {
+            id: "logodesign",
             title: "LOGO DESIGN",
             desc: "Craft the identity of tomorrow.",
             image: "/logodesign.jpeg",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSe7yDbANMfo6mgtT9RFJzElE1hdH2sABwJXZ_eF0uzaFKT47A/viewform",
+            rules: "/Rules and Guidelines Logo designing copm.pdf",
             details: `✨ IRIS’26 In-House Talent Hunt ✨
 🎨 *Logo Designing Competition* 
 🏛️ Baselios Mathews II College of Engineering, Sasthamcotta 
@@ -335,10 +397,13 @@ Anandhu Anil – 9605148556
 Prof. Aswathy Anand – 9544639568`
         },
         {
+            id: "ctf",
             title: "CTF",
             desc: "Capture the Flag: Security challenge.",
-            image: "/ctf.jpeg",
-            modalImage: "/ctf.jpeg",
+            image: "/ctfnew.jpeg",
+            modalImage: "/ctfnew.jpeg",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLScKshMv-MLdQeucJlnA_Xr9VYY_Y-JzQEOjVgKAWwpFnBty7w/viewform",
+            rules: "/IRIS'26_CTF_Rules&Guidelines.pdf",
             cardZoom: 1,
             mobileImgClass: "max-md:object-[center_20%]",
             details: `🏴☠️✨ IRIS’26 IN-HOUSE TALENT HUNT – *CAPTURE THE FLAG* COMPETITION ✨🏴☠️
@@ -376,9 +441,9 @@ Prof. Anakha A.S – +91 81369 26899`
             <div className="max-w-7xl mx-auto">
                 <SectionHeader title="EVENTS" subtitle="Unleashing Innovation" />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 justify-items-center">
                     {events.map((event, i) => (
-                        <div key={i} onClick={() => setSelectedEvent(event)} className="w-full max-w-sm cursor-pointer group">
+                        <div key={i} onClick={() => handleEventClick(event)} className="w-full max-w-sm cursor-pointer group">
                             <TiltedCard
                                 imageSrc={event.image || "https://source.unsplash.com/random/800x600?tech"}
                                 altText={event.title}
@@ -408,9 +473,9 @@ Prof. Anakha A.S – +91 81369 26899`
                 <div className="mt-32">
                     <SectionHeader title="TALENT HUNT" subtitle="Iris In-House • BMCE Exclusive" align="right" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 justify-items-center">
                         {inHouseEvents.map((event, i) => (
-                            <div key={i} onClick={() => setSelectedEvent(event)} className="w-full max-w-sm cursor-pointer group">
+                            <div key={i} onClick={() => handleEventClick(event)} className="w-full max-w-sm cursor-pointer group">
                                 <TiltedCard
                                     imageSrc={event.image}
                                     altText={event.title}
@@ -442,7 +507,7 @@ Prof. Anakha A.S – +91 81369 26899`
 
             <AnimatePresence>
                 {selectedEvent && (
-                    <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+                    <EventModal event={selectedEvent} onClose={handleCloseModal} />
                 )}
             </AnimatePresence>
         </section>
