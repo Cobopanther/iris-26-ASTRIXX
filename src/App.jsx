@@ -116,7 +116,7 @@ function AppContent() {
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [location])
+  }, [location.pathname])
 
   return (
     <>
