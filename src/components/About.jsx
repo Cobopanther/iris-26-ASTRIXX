@@ -63,7 +63,7 @@ const About = () => {
     ];
 
     const editorialBoard = [
-        { name: "Anand", role: "Editor", batch: "S6", image: "/3.png" },
+        { name: "Anand A B", role: "Editor", batch: "S6", image: "/3.png" },
         { name: "Kelvin Kunjumon", role: "Editor", batch: "S8", image: "/7.png" },
     ];
 
@@ -111,7 +111,7 @@ const About = () => {
         { name: "Abhai Clement", image: "/9.png" },
         { name: "Aswin S", image: "/21.png", zoom: 3 },
         { name: "Nakshatra B V", image: "/14.png" },
-        { name: "Anand", image: "/3.png" },
+        { name: "Anand A B", image: "/3.png" },
         { name: "Abhishek Bruno", image: "/6.png" },
         { name: "Muhammed Basil", image: "/17.png" },
         { name: "Jiorijin Prakash", image: "/8.png" },
@@ -143,7 +143,7 @@ const About = () => {
 
     const irisPromotion = [
         { name: "Alby Sajan Alex", role: "Head", image: "/10.png" },
-        { name: "Anand", role: "Head", image: "/3.png" },
+        { name: "Anand A B", role: "Head", image: "/3.png" },
         { name: "Aby John", image: "/aby.png" },
         { name: "Amal Shaji", image: "/amalshajii.png" },
         { name: "Akhin Cheriyan", image: "/18.png" },
