@@ -52,8 +52,8 @@ export default function Footer() {
                     <div className="flex flex-col gap-2">
                         <span className="text-[10px] tracking-[0.3em] text-gray-500 uppercase font-mono">Student Coordinators</span>
                         <div className="text-[11px] md:text-xs text-gray-300 space-y-1 font-light tracking-wide">
-                            <p>Alby Sajan Alex: <span className="text-white font-mono">+91 79944 30491</span></p>
-                            <p>Anand A B: <span className="text-white font-mono">+91 79949 80107</span></p>
+                            <p>Abhimanyu S: <span className="text-white font-mono">+91 87147 12238</span></p>
+                            <p>Meenakshy M S: <span className="text-white font-mono">+91 95679 14787</span></p>
                         </div>
                     </div>
                 </div>
