@@ -81,7 +81,7 @@ const About = () => {
         { name: "Nikhil Nadh", role: "Member", batch: "S6", image: "/20.png" },
         { name: "Jiorijin Prakash", role: "Member", batch: "S4", image: "/8.png" },
         { name: "Aneez Muhammed", role: "Member", batch: "S4", image: "/19.png" },
-        { name: "Sreenandhan A", role: "Member", batch: "S4", image: "/16.png" },
+        { name: "Sreenandan Ajay", role: "Member", batch: "S4", image: "/16.png" },
         { name: "Muhammed Basil", role: "Member", batch: "S4", image: "/17.png" },
         { name: "Anandha Krishnan", role: "Member", batch: "S2", image: "/13.png" },
         { name: "Nimisha Pramod", role: "Member", batch: "S2", image: "/23.png" },
@@ -110,7 +110,7 @@ const About = () => {
         { name: "Gouri Krishna", image: "/11.png" },
         { name: "Abhai Clement", image: "/9.png" },
         { name: "Aswin S", image: "/21.png", zoom: 3 },
-        { name: "Nakshatra B V", image: "/14.png" },
+        { name: "Nakshathra B V", image: "/14.png" },
         { name: "Anand A B", image: "/3.png" },
         { name: "Abhishek Bruno", image: "/6.png" },
         { name: "Muhammed Basil", image: "/17.png" },
@@ -119,12 +119,12 @@ const About = () => {
 
     const irisMedia = [
         { name: "Meenakshy M S", role: "Head", image: "/15.png" },
-        { name: "Nakshatra B V", role: "Head", image: "/14.png" },
+        { name: "Nakshathra B V", role: "Head", image: "/14.png" },
         { name: "Gouri Bhaskar", image: "" },
         { name: "Aby John", image: "/aby.png" },
         { name: "Jinu J", image: "/22.png", zoom: 3 },
         { name: "Amal Shaji", image: "/amalshajii.png" },
-        { name: "Abhinav", image: "/abhinav.png" },
+        { name: "Abhinav P", image: "/abhinav.png" },
         { name: "Abul Gaiz", image: "" },
         { name: "Job T Biju", image: "/job.png" },
         { name: "Rijin Reji", image: "/rijin.png" },
@@ -134,7 +134,7 @@ const About = () => {
 
     const irisVideoPromoters = [
         { name: "Adithyan R", image: "/adithyanr.png" },
-        { name: "Abhinav", image: "/abhinav.png" },
+        { name: "Abhinav P", image: "/abhinav.png" },
         { name: "Devadethan A", image: "/devadethan.png" },
         { name: "Jeen George Mathunny", image: "/jeen.png" },
         { name: "Nandana S R", image: "/nandana.png" },
@@ -147,11 +147,11 @@ const About = () => {
         { name: "Aby John", image: "/aby.png" },
         { name: "Amal Shaji", image: "/amalshajii.png" },
         { name: "Akhin Cheriyan", image: "/18.png" },
-        { name: "Alphy Sajan", image: "/alphy.png", zoom: 1.2 },
+        { name: "Alphy Sajan", image: "/alpnew.png", zoom: 1.2 },
         { name: "Abhishek Bruno", image: "/6.png" },
         { name: "Adithyan S Prathap", image: "/adhiprathap.png" },
         { name: "Joel Mathew", image: "" },
-        { name: "Sreenandhan A", image: "/16.png" },
+        { name: "Sreenandan Ajay", image: "/16.png" },
         { name: "Joel K Jose", image: "" },
     ];
 
