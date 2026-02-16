@@ -16,7 +16,7 @@ export default function TiltedCard({
     imageHeight = '300px',
     imageWidth = '300px',
     scaleOnHover = 1.1,
-    rotateAmplitude = 14,
+    imageScale = 1,
     showMobileWarning = true,
     showTooltip = true,
     overlayContent = null,
@@ -104,7 +104,8 @@ export default function TiltedCard({
                     className="tilted-card-img absolute top-0 left-0 object-cover rounded-[15px] will-change-transform translate-z-0 transition-all duration-500 opacity-90"
                     style={{
                         width: imageWidth,
-                        height: imageHeight
+                        height: imageHeight,
+                        scale: imageScale
                     }}
                 />
 

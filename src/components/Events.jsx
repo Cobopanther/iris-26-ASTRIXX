@@ -101,9 +101,10 @@ function EventModal({ event, onClose }) {
                 <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden group flex-shrink-0">
                     <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay z-10"></div>
                     <img
-                        src={event.image || `https://source.unsplash.com/random/800x600?abstract,${event.title}`}
+                        src={event.modalImage || event.image || `https://source.unsplash.com/random/800x600?abstract,${event.title}`}
                         alt={event.title}
                         className="w-full h-full object-contain transition-transform duration-700 relative z-10 bg-black/50 backdrop-blur-sm"
+                        style={{ transform: `scale(${event.zoom || 1})` }}
                     />
                 </div>
 
@@ -311,6 +312,8 @@ Prof. Aswathy Anand – 9544639568`
             title: "CTF",
             desc: "Capture the Flag: Security challenge.",
             image: "/ctf.jpeg",
+            modalImage: "/ctf.jpeg",
+            cardZoom: 1,
             details: `🏴☠️✨ IRIS’26 IN-HOUSE TALENT HUNT – *CAPTURE THE FLAG* COMPETITION ✨🏴☠️
 
 🏛️ Baselios Mathews II College of Engineering
@@ -391,6 +394,7 @@ Prof. Anakha A.S – +91 81369 26899`
                                     imageWidth="100%"
                                     rotateAmplitude={12}
                                     scaleOnHover={1.05}
+                                    imageScale={event.cardZoom || 1}
                                     showMobileWarning={false}
                                     showTooltip={false}
                                     displayOverlayContent={true}
