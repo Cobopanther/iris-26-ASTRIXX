@@ -8,9 +8,9 @@ const MemberCard = ({ name, role, className = "", image, batch, zoom }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`group relative flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 w-full sm:w-[280px] ${className}`}
+        className={`group relative flex flex-col items-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 w-[calc(50%-12px)] sm:w-[280px] ${className}`}
     >
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand-primary/20 to-brand-dark/20 border-2 border-white/10 group-hover:border-brand-accent/50 mb-4 overflow-hidden relative">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand-primary/20 to-brand-dark/20 border-2 border-white/10 group-hover:border-brand-accent/50 mb-4 overflow-hidden relative">
             {image ? (
                 <img
                     src={image}
@@ -25,9 +25,9 @@ const MemberCard = ({ name, role, className = "", image, batch, zoom }) => (
             )}
         </div>
 
-        <h3 className="text-white font-medium text-lg tracking-wide group-hover:text-brand-accent transition-colors text-center">{name || "Name Needed"}</h3>
-        <p className="text-brand-primary text-sm font-mono tracking-wider uppercase mt-1 text-center">{role}</p>
-        <p className="text-gray-400 text-xs mt-2 font-light">{batch}</p>
+        <h3 className="text-white font-medium text-sm sm:text-lg tracking-wide group-hover:text-brand-accent transition-colors text-center line-clamp-1">{name || "Name Needed"}</h3>
+        <p className="text-brand-primary text-[10px] sm:text-sm font-mono tracking-wider uppercase mt-1 text-center">{role}</p>
+        <p className="text-gray-400 text-[9px] sm:text-xs mt-2 font-light">{batch}</p>
     </motion.div>
 );
 
@@ -236,7 +236,7 @@ const About = () => {
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
 
-                                <div className="flex flex-wrap justify-center gap-6">
+                                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                                     {executivePanel.map((member, i) => (
                                         <MemberCard
                                             key={i}
@@ -253,7 +253,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Editorial Board</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+                                <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-4xl mx-auto">
                                     {editorialBoard.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
@@ -285,7 +285,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Media Wing</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="flex flex-wrap justify-center gap-6">
+                                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                                     {mediaWing.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
@@ -336,7 +336,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Core Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="flex flex-wrap justify-center gap-6">
+                                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                                     {irisCore.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
