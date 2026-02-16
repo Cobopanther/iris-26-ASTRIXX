@@ -43,12 +43,16 @@ function DateGroup({ date, events }) {
 }
 
 export default function Schedule() {
-    const [activeTab, setActiveTab] = useState("inhouse")
+    const [activeTab, setActiveTab] = useState("general")
 
     const generalEvents = [
-        { title: "Inauguration", time: "9:00 AM", desc: "Main Auditorium" },
-        { title: "Events & Workshops", time: "10:30 AM", desc: "Various Venues" },
-        { title: "Guest Talk", time: "3:00 PM", desc: "Seminar Hall" },
+        {
+            date: "February 27, 2026",
+            items: [
+                { title: "Ideathon", time: "9:30 AM – 3:30 PM", desc: "Showcase your innovative ideas." },
+                { title: "Conclave", time: "4:00 PM – 6:00 PM", desc: "Tech talks and industry insights." },
+            ]
+        }
     ]
 
     const inHouseEvents = [
@@ -85,13 +89,13 @@ export default function Schedule() {
                         <button
                             onClick={() => setActiveTab("general")}
                             className={`relative px-6 py-3 text-sm md:text-base font-mono font-bold tracking-wider uppercase transition-all duration-300 border rounded-full overflow-hidden bg-black/[0.7] backdrop-blur-sm hover:bg-black/[1] hover:shadow-[0_0_15px_rgba(171,79,65,0.1)] ${activeTab === "general"
-                                    ? "border-brand-accent/50 shadow-[0_0_15px_rgba(238,203,136,0.1)]"
-                                    : "border-white/10 text-gray-400 hover:text-white hover:border-brand-primary/30"
+                                ? "border-brand-accent/50 shadow-[0_0_15px_rgba(238,203,136,0.1)]"
+                                : "border-white/10 text-gray-400 hover:text-white hover:border-brand-primary/30"
                                 }`}
                         >
                             <span className={`relative z-10 ${activeTab === "general"
-                                    ? "text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)]"
-                                    : ""
+                                ? "text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)]"
+                                : ""
                                 }`}>
                                 General Events
                             </span>
@@ -100,13 +104,13 @@ export default function Schedule() {
                         <button
                             onClick={() => setActiveTab("inhouse")}
                             className={`relative px-6 py-3 text-sm md:text-base font-mono font-bold tracking-wider uppercase transition-all duration-300 border rounded-full overflow-hidden bg-black/[0.7] backdrop-blur-sm hover:bg-black/[1] hover:shadow-[0_0_15px_rgba(171,79,65,0.1)] ${activeTab === "inhouse"
-                                    ? "border-brand-accent/50 shadow-[0_0_15px_rgba(238,203,136,0.1)]"
-                                    : "border-white/10 text-gray-400 hover:text-white hover:border-brand-primary/30"
+                                ? "border-brand-accent/50 shadow-[0_0_15px_rgba(238,203,136,0.1)]"
+                                : "border-white/10 text-gray-400 hover:text-white hover:border-brand-primary/30"
                                 }`}
                         >
                             <span className={`relative z-10 ${activeTab === "inhouse"
-                                    ? "text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)]"
-                                    : ""
+                                ? "text-transparent bg-clip-text bg-[linear-gradient(to_top,#5D1F1E,#AB4F41,#CB6F4A,#EECB88)]"
+                                : ""
                                 }`}>
                                 In-House Events
                             </span>
@@ -129,8 +133,8 @@ export default function Schedule() {
                                 transition={{ duration: 0.3 }}
                                 className="space-y-4"
                             >
-                                {generalEvents.map((event, index) => (
-                                    <ScheduleItem key={index} {...event} />
+                                {generalEvents.map((group, index) => (
+                                    <DateGroup key={index} date={group.date} events={group.items} />
                                 ))}
                             </motion.div>
                         ) : (
