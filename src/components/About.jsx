@@ -120,7 +120,7 @@ const About = () => {
     const irisMedia = [
         { name: "Meenakshy M S", role: "Head", image: "/15.png" },
         { name: "Nakshathra B V", role: "Head", image: "/14.png" },
-        { name: "Gouri Bhaskar", image: "" },
+        { name: "Gouri Bhaskar", image: "/gouri.png" },
         { name: "Aby John", image: "/aby.png" },
         { name: "Jinu J", image: "/22.png", zoom: 3 },
         { name: "Amal Shaji", image: "/amalshajii.png" },
