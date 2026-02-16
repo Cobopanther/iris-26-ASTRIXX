@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from 'framer-motion'
 import TiltedCard from './TiltedCard'
 import Aurora from './Aurora'
 
@@ -63,6 +63,19 @@ function GridItem({ title, desc, index, image, onClick }) {
 function EventModal({ event, onClose }) {
     if (!event) return null;
 
+    const scrollY = useMotionValue(0);
+    const imageMobileHeight = useTransform(scrollY, [0, 200], ["16rem", "0rem"]);
+    const imageMobileOpacity = useTransform(scrollY, [0, 150], [1, 0]);
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={onClose}>
             <motion.div
@@ -76,7 +89,7 @@ function EventModal({ event, onClose }) {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-                className="relative z-10 bg-black/20 border border-white/20 rounded-2xl overflow-hidden max-w-6xl w-full shadow-[0_0_50px_rgba(171,79,65,0.2)] flex flex-col md:flex-row h-auto max-h-[90vh] md:h-[85vh]"
+                className="relative z-10 bg-black/20 border border-white/20 rounded-2xl overflow-hidden max-w-6xl w-full shadow-[0_0_50px_rgba(171,79,65,0.2)] flex flex-col md:flex-row h-[85vh] md:h-[85vh]"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="absolute inset-0 pointer-events-none -z-10">
@@ -98,7 +111,11 @@ function EventModal({ event, onClose }) {
                 </button>
 
                 {/* Left Side - Poster */}
-                <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden group flex-shrink-0">
+                {/* Left Side - Poster */}
+                <motion.div
+                    className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden group flex-shrink-0"
+                    style={isMobile ? { height: imageMobileHeight, opacity: imageMobileOpacity } : {}}
+                >
                     <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay z-10"></div>
                     <img
                         src={event.modalImage || event.image || `https://source.unsplash.com/random/800x600?abstract,${event.title}`}
@@ -106,22 +123,30 @@ function EventModal({ event, onClose }) {
                         className="w-full h-full object-contain transition-transform duration-700 relative z-10 bg-black/50 backdrop-blur-sm"
                         style={{ transform: `scale(${event.zoom || 1})` }}
                     />
-                </div>
+                </motion.div>
 
                 {/* Right Side - Description & Register */}
-                <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col relative overflow-y-auto custom-scrollbar flex-1 min-h-0 bg-black/60">
+                {/* Right Side - Description & Register */}
+                <div className="w-full md:w-1/2 flex flex-col relative flex-1 min-h-0 bg-black/60">
 
-                    <h2 className="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-[linear-gradient(to_right,#AB4F41,#EECB88)] tracking-tighter shrink-0">
-                        {event.title}
-                    </h2>
+                    <div className="p-8 md:p-12 pb-0 md:pb-0 shrink-0">
+                        <h2 className="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-[linear-gradient(to_right,#AB4F41,#EECB88)] tracking-tighter shrink-0">
+                            {event.title}
+                        </h2>
 
-                    <div className="h-1 w-20 bg-brand-secondary mb-6 rounded-full shrink-0"></div>
+                        <div className="h-1 w-20 bg-brand-secondary mb-6 rounded-full shrink-0"></div>
+                    </div>
 
-                    <p className="text-gray-300 text-lg leading-relaxed mb-8 font-light whitespace-pre-line text-sm md:text-base">
-                        {event.details || event.desc}
-                    </p>
+                    <div
+                        className="flex-1 overflow-y-auto px-8 md:px-12 pb-8 md:pb-12 custom-scrollbar"
+                        onScroll={(e) => scrollY.set(e.currentTarget.scrollTop)}
+                    >
+                        <p className="text-gray-300 text-lg leading-relaxed font-light whitespace-pre-line text-sm md:text-base">
+                            {event.details || event.desc}
+                        </p>
+                    </div>
 
-                    <div className="mt-auto shrink-0 pt-8">
+                    <div className="p-6 md:p-8 border-t border-white/10 bg-black/40 backdrop-blur-md shrink-0 z-10 w-full">
                         <button className="px-8 py-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold tracking-widest uppercase rounded-lg hover:shadow-[0_0_20px_rgba(171,79,65,0.5)] transform hover:-translate-y-1 transition-all duration-300 border border-white/10 w-full md:w-auto text-center">
                             Register Now
                         </button>
@@ -218,6 +243,7 @@ Prof. Greeshma Chacko: +91 99466 85090`
             title: "QUIZ",
             desc: "Test your tech knowledge against the best.",
             image: "/quiz.jpeg",
+            mobileImgClass: "max-md:object-[center_20%]",
             details: `🧠✨IRIS'26 IN HOUSE TALENT HUNT QUIZ COMPETITION
 
 Baselios Mathews II College of Engineering 
@@ -314,6 +340,7 @@ Prof. Aswathy Anand – 9544639568`
             image: "/ctf.jpeg",
             modalImage: "/ctf.jpeg",
             cardZoom: 1,
+            mobileImgClass: "max-md:object-[center_20%]",
             details: `🏴☠️✨ IRIS’26 IN-HOUSE TALENT HUNT – *CAPTURE THE FLAG* COMPETITION ✨🏴☠️
 
 🏛️ Baselios Mathews II College of Engineering
@@ -398,6 +425,7 @@ Prof. Anakha A.S – +91 81369 26899`
                                     showMobileWarning={false}
                                     showTooltip={false}
                                     displayOverlayContent={true}
+                                    imageClass={event.mobileImgClass || ""}
                                     overlayContent={
                                         <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
                                             <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-[linear-gradient(to_right,#AB4F41,#EECB88)] whitespace-nowrap">

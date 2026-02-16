@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function Navbar({ onMenuClick }) {
+export default function Navbar({ onMenuClick, toggleTheme }) {
     return (
         <nav className="fixed top-0 left-0 w-full z-40 px-8 py-6 flex justify-between items-center text-white pointer-events-none">
-            <div className="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors duration-300 pointer-events-auto cursor-pointer mix-blend-difference">
-                IRIS
-            </div>
+
 
             {/* Middle Left Bird Menu Trigger */}
             <button

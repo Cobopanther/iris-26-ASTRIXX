@@ -2,7 +2,7 @@
 export default function Footer() {
     return (
         <footer className="bg-black text-white pt-24 pb-12 px-6 border-t border-white/10 relative z-10 block">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 flex-wrap">
                     <div className="flex flex-col gap-4">
                         <h2 className="text-[6vw] md:text-[4vw] leading-none font-bold tracking-tighter text-white/10 select-none">ASTRIXX</h2>
@@ -60,7 +60,7 @@ export default function Footer() {
                 <div></div>
             </div>
             <div className="max-w-7xl mx-auto border-t border-white/10 mt-12 pt-8 flex justify-between text-xs text-zinc-600">
-                <div>© 2026 IRIS ASSOCIATION</div>
+                <div>© 2026 ASTRIXX ASSOCIATION</div>
             </div>
         </footer>
     )

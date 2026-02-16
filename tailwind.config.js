@@ -7,8 +7,8 @@ export default {
     theme: {
         extend: {
             colors: {
-                black: '#000000',
-                white: '#ffffff',
+                black: 'rgb(var(--rgb-black) / <alpha-value>)',
+                white: 'rgb(var(--rgb-white) / <alpha-value>)',
                 // New Palette: #5D1F1E, #AB4F41, #CB6F4A, #EECB88
                 brand: {
                     dark: '#5D1F1E',      // deep red

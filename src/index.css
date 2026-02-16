@@ -4,9 +4,14 @@
 
 :root {
   --cursor-size: 24px;
-  --white: #ffffff;
-  --black: #000000;
+  --rgb-white: 255 255 255;
+  --rgb-black: 0 0 0;
   --gray: #808080;
+}
+
+[data-theme='light'] {
+  --rgb-black: 255 255 255;
+  --rgb-white: 0 0 0;
 }
 
 body {
@@ -14,8 +19,8 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: #000;
-  color: #fff;
+  background-color: rgb(var(--rgb-black));
+  color: rgb(var(--rgb-white));
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   cursor: auto;

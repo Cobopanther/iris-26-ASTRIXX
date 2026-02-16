@@ -113,10 +113,20 @@ function BirdParticles() {
     }, [])
 
     const mouse = useMemo(() => new THREE.Vector2(9999, 9999), []) // Start off-screen
+    const materialRef = useRef()
     const { camera } = useThree()
 
     useFrame(() => {
         if (!geometry || !particleState || !pointsRef.current) return
+
+        // Update opacity based on scroll
+        if (materialRef.current) {
+            const scrollY = window.scrollY
+            const maxScroll = window.innerHeight
+            // Fade out as we scroll down, keeping a minimum opacity of 0.1
+            const newOpacity = Math.max(0.1, 0.9 - (scrollY / maxScroll) * 0.9)
+            materialRef.current.opacity = newOpacity
+        }
 
         // Update mouse world position
         raycaster.setFromCamera(mouse, camera)
@@ -124,6 +134,9 @@ function BirdParticles() {
 
         const posAttribute = geometry.attributes.position
         const posArray = posAttribute.array
+
+        // ... (rest of the physics logic is unchanged, but I need to include it in the replacement if I'm replacing the whole block, or just the top part)
+        // Since I can't easily target just the top of useFrame without context of variables defined inside, I will target the block start.
 
         particleState.forEach((p, i) => {
             const idx = i * 3
@@ -168,6 +181,7 @@ function BirdParticles() {
     return (
         <points ref={pointsRef} geometry={geometry}>
             <pointsMaterial
+                ref={materialRef}
                 size={3}
                 vertexColors
                 transparent
@@ -180,10 +194,28 @@ function BirdParticles() {
 }
 
 export default function Background3D() {
+    const [cameraZ, setCameraZ] = useState(300)
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth
+            if (width < 768) {
+                setCameraZ(450) // Zoomed out for mobile
+            } else {
+                setCameraZ(300) // Default for desktop
+            }
+        }
+
+        handleResize() // Set initial
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     return (
         <div className="fixed top-0 left-0 w-full h-full -z-10 bg-black">
             <Canvas>
-                <PerspectiveCamera makeDefault position={[0, 0, 300]} fov={75} />
+                {/* Position Z controls zoom */}
+                <PerspectiveCamera makeDefault position={[0, 0, cameraZ]} fov={75} />
                 <BirdParticles />
             </Canvas>
         </div>
