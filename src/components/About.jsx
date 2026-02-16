@@ -8,7 +8,7 @@ const MemberCard = ({ name, role, className = "", image, batch, zoom }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`group relative flex flex-col items-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 w-[calc(50%-12px)] sm:w-[280px] ${className}`}
+        className={`group relative flex flex-col items-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-brand-primary/50 transition-all duration-300 w-[calc(50%-12px)] sm:w-[260px] md:w-[280px] ${className}`}
     >
         <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand-primary/20 to-brand-dark/20 border-2 border-white/10 group-hover:border-brand-accent/50 mb-4 overflow-hidden relative">
             {image ? (
@@ -285,7 +285,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Media Wing</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                                <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                                     {mediaWing.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
@@ -308,14 +308,18 @@ const About = () => {
                                 <div className="h-[1px] flex-1 bg-white/10"></div>
                             </div>
 
-                            <div className="flex flex-wrap justify-center gap-x-8 gap-y-12 max-w-5xl mx-auto">
-                                {staffCoordinators.map((member, i) => (
+                            <div className="flex flex-col items-center gap-12 max-w-5xl mx-auto">
+                                <div className="w-full flex justify-center">
                                     <MemberCard
-                                        key={i}
-                                        {...member}
-                                        className={i === 0 ? "w-full md:w-[320px] scale-110 mb-8 border-brand-accent/40" : ""}
+                                        {...staffCoordinators[0]}
+                                        className="w-full sm:w-[320px] scale-110 border-brand-accent/40"
                                     />
-                                ))}
+                                </div>
+                                <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+                                    {staffCoordinators.slice(1).map((member, i) => (
+                                        <MemberCard key={i} {...member} className="w-full sm:w-[280px]" />
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -336,7 +340,7 @@ const About = () => {
                                     <h3 className="text-xl font-mono tracking-[0.3em] uppercase text-brand-accent">Core Committee</h3>
                                     <div className="h-[1px] flex-1 bg-white/10"></div>
                                 </div>
-                                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                                <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                                     {irisCore.map((member, i) => (
                                         <MemberCard key={i} {...member} />
                                     ))}
