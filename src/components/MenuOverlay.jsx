@@ -10,7 +10,6 @@ export default function MenuOverlay({ active, onClose }) {
         { title: "EVENTS", path: "#events", type: "hash" },
         { title: "ABOUT", path: "/about", type: "route" },
         { title: "SCHEDULE", path: "/schedule", type: "route" },
-        { title: "REGISTER", path: "#register", type: "hash" }
     ]
 
     const handleNavigation = (link) => {
