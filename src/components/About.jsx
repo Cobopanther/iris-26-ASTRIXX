@@ -193,7 +193,7 @@ const About = () => {
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`relative px-6 py-3 text-sm md:text-base font-mono font-bold tracking-wider uppercase transition-all duration-300 border rounded-full overflow-hidden bg-black/[0.7] backdrop-blur-sm hover:bg-black/[1] hover:shadow-[0_0_15px_rgba(171,79,65,0.1)] ${activeTab === tab.id
+                            className={`relative px-6 py-3 text-base md:text-lg font-mono font-bold tracking-wider uppercase transition-all duration-300 border rounded-full overflow-hidden bg-black/[0.7] backdrop-blur-sm hover:bg-black/[1] hover:shadow-[0_0_15px_rgba(171,79,65,0.1)] ${activeTab === tab.id
                                 ? "border-brand-accent/50 shadow-[0_0_15px_rgba(238,203,136,0.1)]"
                                 : "border-white/10 text-gray-400 hover:text-white hover:border-brand-primary/30"
                                 }`}
