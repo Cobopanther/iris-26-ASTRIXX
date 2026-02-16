@@ -82,7 +82,7 @@ const About = () => {
         { name: "Jiorijin Prakash", role: "Member", batch: "S4", image: "/8.png" },
         { name: "Aneez Muhammed", role: "Member", batch: "S4", image: "/19.png" },
         { name: "Sreenandhan A", role: "Member", batch: "S4", image: "/16.png" },
-        { name: "Muhammed Basil", role: "Member", batch: "S6", image: "/17.png" },
+        { name: "Muhammed Basil", role: "Member", batch: "S4", image: "/17.png" },
         { name: "Anandha Krishnan", role: "Member", batch: "S2", image: "/13.png" },
         { name: "Nimisha Pramod", role: "Member", batch: "S2", image: "/23.png" },
         { name: "Abikrishna K B", role: "Member", batch: "S2", image: "/24.png" },
