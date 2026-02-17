@@ -77,8 +77,8 @@ const About = () => {
         { name: "Anandhu Anil", role: "Member", batch: "S8", image: "/4.png" },
         { name: "Gouri Krishna", role: "Member", batch: "S8", image: "/11.png" },
         { name: "Abhai Clement", role: "Member", batch: "S8", image: "/9.png" },
-        { name: "Nakshatra B V", role: "Member", batch: "S6", image: "/14.png" },
-        { name: "Nikhil Nadh", role: "Member", batch: "S6", image: "/20.png" },
+        { name: "Nakshathra B V", role: "Member", batch: "S6", image: "/14.png" },
+        { name: "Nikhil Nadh S", role: "Member", batch: "S6", image: "/20.png" },
         { name: "Jiorijin Prakash", role: "Member", batch: "S4", image: "/8.png" },
         { name: "Aneez Muhammed", role: "Member", batch: "S4", image: "/19.png" },
         { name: "Sreenandan Ajay", role: "Member", batch: "S4", image: "/16.png" },
@@ -102,7 +102,7 @@ const About = () => {
         { name: "Kelvin Kunjumon", image: "/7.png" },
         { name: "Meenakshy M S", image: "/15.png" },
         { name: "Joel Pappachan Binu", image: "/5.png" },
-        { name: "Nikhil Nadh", image: "/20.png" },
+        { name: "Nikhil Nadh S", image: "/20.png" },
     ];
 
     const irisProgram = [
@@ -125,7 +125,7 @@ const About = () => {
         { name: "Jinu J", image: "/22.png", zoom: 3 },
         { name: "Amal Shaji", image: "/amalshajii.png" },
         { name: "Abhinav P", image: "/abhinav.png" },
-        { name: "Abul Gaiz", image: "" },
+        { name: "Abul Gaiz", image: "/gaiz.png" },
         { name: "Job T Biju", image: "/job.png" },
         { name: "Rijin Reji", image: "/rijin.png" },
         { name: "Athuljeev S", image: "/12.png" },
@@ -150,9 +150,9 @@ const About = () => {
         { name: "Alphy Sajan", image: "/alpnew.png", zoom: 1.2 },
         { name: "Abhishek Bruno", image: "/6.png" },
         { name: "Adithyan S Prathap", image: "/adhiprathap.png" },
-        { name: "Joel Mathew", image: "" },
+        { name: "Joel Mathew", image: "/joelmathwe.png" },
         { name: "Sreenandan Ajay", image: "/16.png" },
-        { name: "Joel K Jose", image: "" },
+        { name: "Joel K Jose", image: "/joelkjose.png" },
     ];
 
 
