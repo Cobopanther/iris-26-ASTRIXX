@@ -49,8 +49,18 @@ export default function Schedule() {
         {
             date: "February 27, 2026",
             items: [
-                { title: "Ideathon", time: "9:30 AM – 3:30 PM", desc: "Showcase your innovative ideas." },
-                { title: "Conclave", time: "4:00 PM – 6:00 PM", desc: "Tech talks and industry insights." },
+                { title: "Inauguration", time: "09:30 AM – 10:30 AM", desc: "Grand opening ceremony of IRIS'26." },
+                { title: "National Conclave", time: "10:30 AM – 12:30 PM", desc: "Expert talks and industry insights." },
+                { title: "State-Level Ideathon", time: "10:30 AM", desc: "Pitch your innovative ideas." },
+                { title: "Quiz Competition", time: "01:30 PM – 04:30 PM", desc: "Ultimate tech trivia challenge." },
+                { title: "ZYRA Hackathon", time: "Feb 27 & 28", desc: "Showcase your coding skills in this marathon." },
+                { title: "Workshops", time: "02:00 PM – 03:00 PM", desc: "Hands-on technical learning sessions." },
+            ]
+        },
+        {
+            date: "February 28, 2026",
+            items: [
+                { title: "ZYRA Hackathon", time: "All Day", desc: "Continue and complete the hackathon projects." },
             ]
         }
     ]
@@ -59,15 +69,11 @@ export default function Schedule() {
         {
             date: "February 26, 2026",
             items: [
-                { title: "Debugging", time: "1:30 PM - 3:00 PM", desc: "Find the bugs before they find you." },
-                { title: "Logo Design", time: "9:30 AM - 11:00 AM", desc: "Craft the identity of tomorrow." },
-                { title: "CTF (Capture The Flag)", time: "11:00 AM - 12:40 PM", desc: "Security challenge." },
-            ]
-        },
-        {
-            date: "February 27, 2026",
-            items: [
-                { title: "Quiz Competition", time: "1:30 PM - 4:00 PM", desc: "Test your tech knowledge." },
+                {
+                    title: "IRIS'26 In-House Talent Hunt",
+                    time: "09:30 AM - 04:00 PM",
+                    desc: "Debugging, Capture The Flag, Logo Design Competition"
+                },
             ]
         }
     ]

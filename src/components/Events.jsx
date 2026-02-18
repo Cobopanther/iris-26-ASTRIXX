@@ -257,7 +257,7 @@ Kelvin Kunjumon – 73068 80119`
             id: "ideathon",
             title: "IDEATHON",
             desc: "Where disruptive ideas take flight and find their path.",
-            image: "/ideath.jpeg",
+            image: "/ideathon_poster.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSdal1KTksC3k5oRRcggCDWGSz9kP69J0e7Agjs3stMYJMtNhQ/viewform",
             rules: "/IRIS'26_Ideathon_Rules&Guidelines.pdf",
             details: `✨ IDEATHON 2026 – IRIS’26 ✨
@@ -288,7 +288,28 @@ Aswin S: +91 9188237299
 Prof. Greeshma Chacko: +91 99466 85090`
         },
         { id: "workshop", title: "WORKSHOP SERIES", desc: "Deep dives into cutting-edge technology and creative skills." },
-        { id: "hackathon", title: "HACKATHON", desc: "The ultimate 24h test of technical prowess and collaboration." }
+        {
+            id: "hackathon",
+            title: "ZYRA HACKATHON",
+            desc: "Industrial Innovation Hackathon: Build solutions for real-world challenges.",
+            image: "/hackathon_poster.png",
+            link: "https://forms.gle/XHLN81WEgLB6NiER8",
+            details: `ZYRA presents the Industrial Innovation Hackathon 2026✨ 
+
+24-hour innovation challenge by IEDC BMCE & IEEE SB BMCE, where ideas meet real industrial impact.
+
+Work on real-world industry problem statements in collaboration with our Technical Partners, District Industries Centre, Kollam and MECON Cluster, and build solutions that address actual industrial challenges.
+
+📅 27–28 February 2026
+🏆 Prize Pool: ₹20,000
+👥 Team Size: 2–4
+💰 Registration Fee: ₹800
+
+📞 For more Information:
+Vaishnavi - +91 70122 40007
+Sreyas - +91 75939 33552
+`
+        }
     ]
 
     const inHouseEvents = [
@@ -308,7 +329,7 @@ Department of Computer Science and Engineering
 
 Astrixx- Computer Science Association
 
-📅Date:27/02/2025
+📅Date:27/02/2026
 ⏰Time:1.30 pm - 4.00 pm
 📍Venue : Einstein Hall/ Classroom
 

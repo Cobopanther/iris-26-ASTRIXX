@@ -63,7 +63,7 @@ export default function Hero() {
                     <div className="flex flex-col items-center justify-center gap-6 w-full mb-2">
                         {/* Date Pill */}
                         <a
-                            href="https://www.google.com/calendar/render?action=TEMPLATE&text=IRIS'26&dates=20260302T033000Z/20260303T123000Z&details=Presented+by+ASTRIXX.+Where+Ideas+Ignite+and+Creativity+Converges.&location=Baselios+Mathews+II+College+of+Engineering,+Sasthamcotta,+Kerala&sf=true&output=xml"
+                            href="https://www.google.com/calendar/render?action=TEMPLATE&text=IRIS'26&dates=20260227T040000Z/20260228T123000Z&details=Presented+by+ASTRIXX.+Where+Ideas+Ignite+and+Creativity+Converges.&location=Baselios+Mathews+II+College+of+Engineering,+Sasthamcotta,+Kerala&sf=true&output=xml"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-4 px-6 py-3 bg-black/[0.7] backdrop-blur-sm border border-white/10 rounded-full hover:bg-black/[1] transition-all duration-300 group cursor-pointer hover:border-brand-accent/30 hover:shadow-[0_0_15px_rgba(238,203,136,0.1)]"

@@ -5,8 +5,8 @@ export default function Countdown() {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
 
     function calculateTimeLeft() {
-        // Event Date: March 2, 2026 at 9:00 AM
-        const difference = +new Date("2026-03-02T09:00:00") - +new Date()
+        // Event Date: February 27, 2026 at 9:30 AM
+        const difference = +new Date("2026-02-27T09:30:00") - +new Date()
 
         let timeLeft = {}
 
