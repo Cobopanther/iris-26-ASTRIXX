@@ -64,9 +64,6 @@ function GridItem({ title, desc, index, image, onClick }) {
 function EventModal({ event, onClose }) {
     if (!event) return null;
 
-    const scrollY = useMotionValue(0);
-    const imageMobileHeight = useTransform(scrollY, [0, 200], ["16rem", "0rem"]);
-    const imageMobileOpacity = useTransform(scrollY, [0, 150], [1, 0]);
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -115,7 +112,6 @@ function EventModal({ event, onClose }) {
                 {/* Left Side - Poster */}
                 <motion.div
                     className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden group flex-shrink-0"
-                    style={isMobile ? { height: imageMobileHeight, opacity: imageMobileOpacity } : {}}
                 >
                     <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay z-10"></div>
                     <img
@@ -140,7 +136,6 @@ function EventModal({ event, onClose }) {
 
                     <div
                         className="flex-1 overflow-y-auto px-8 md:px-12 pb-8 md:pb-12 custom-scrollbar"
-                        onScroll={(e) => scrollY.set(e.currentTarget.scrollTop)}
                     >
                         <p className="text-gray-300 text-lg leading-relaxed font-light whitespace-pre-line text-sm md:text-base">
                             {event.details || event.desc}
