@@ -54,7 +54,7 @@ export default function Schedule() {
                 { title: "State-Level Ideathon", time: "10:30 AM", desc: "Pitch your innovative ideas." },
                 { title: "Quiz Competition", time: "01:30 PM – 04:30 PM", desc: "Ultimate tech trivia challenge." },
                 { title: "ZYRA Hackathon", time: "Feb 27 & 28", desc: "Showcase your coding skills in this marathon." },
-                { title: "Workshops", time: "02:00 PM – 03:00 PM", desc: "Hands-on technical learning sessions." },
+                { title: "One Team Workshop Series", time: "02:00 PM – 03:00 PM", desc: "Industry-led technical sessions on emerging technologies." },
             ]
         },
         {

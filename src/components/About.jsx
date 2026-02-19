@@ -103,10 +103,10 @@ const About = () => {
         { name: "Meenakshy M S", image: "/15.png" },
         { name: "Joel Pappachan Binu", image: "/5.png" },
         { name: "Nikhil Nadh S", image: "/20.png" },
+        { name: "Anandhu Anil", image: "/4.png" },
     ];
 
     const irisProgram = [
-        { name: "Anandhu Anil", image: "/4.png" },
         { name: "Gouri Krishna", image: "/11.png" },
         { name: "Abhai Clement", image: "/9.png" },
         { name: "Aswin S", image: "/21.png", zoom: 3 },

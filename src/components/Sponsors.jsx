@@ -35,7 +35,9 @@ Edappally Toll, 1st Floor, 33/499A, Muttathottil Building, Parutheli Palam, Koch
 
 ✉️ EMAIL
 sarath@oneteamsolutions.co.in`,
-                scale: 1.2
+                link: "https://oneteamsolutions.in/",
+                scale: 1.4,
+                modalScale: 1.2
             }
         ]
     },

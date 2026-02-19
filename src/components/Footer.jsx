@@ -7,14 +7,14 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h2 className="text-[6vw] md:text-[4vw] leading-none font-bold tracking-tighter text-white/10 select-none">ASTRIXX</h2>
                         <a
-                            href="https://www.instagram.com/astrrix_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            href="https://www.instagram.com/astrixx.cse_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-400 hover:text-brand-accent transition-all duration-300 group ml-2"
                             data-hover
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                            <span className="text-[10px] tracking-[0.3em] font-mono group-hover:translate-x-1 transition-transform uppercase">astrrix_</span>
+                            <span className="text-[10px] tracking-[0.3em] font-mono group-hover:translate-x-1 transition-transform uppercase">astrixx.cse_</span>
                         </a>
                     </div>
 

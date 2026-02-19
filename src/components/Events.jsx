@@ -228,7 +228,7 @@ export default function Events() {
             id: "conclave",
             title: "CONCLAVE",
             desc: "A prestigious gathering of thought leaders and innovators.",
-            image: "/conclave.jpeg",
+            image: "/conclave final.jpg.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSegBDvQd3IiKJn4kj59F63uTzaDfQgqQLHm1Uu-IExTPvQFMA/viewform",
             details: `🎤✨ IRIS’26 – CONCLAVE 2026 ✨🎤
 
@@ -292,7 +292,7 @@ For assistance regarding IRIS'26 – IDEATHON 2026 registration, payment confirm
 Aswin S: +91 9188237299
 Prof. Greeshma Chacko: +91 99466 85090`
         },
-        { id: "workshop", title: "WORKSHOP SERIES", desc: "Deep dives into cutting-edge technology and creative skills." },
+
         {
             id: "hackathon",
             title: "ZYRA HACKATHON",
@@ -322,7 +322,7 @@ Sreyas - +91 75939 33552
             id: "quiz",
             title: "QUIZ",
             desc: "Test your tech knowledge against the best.",
-            image: "/quiz.jpeg",
+            image: "/quizfinal.jpeg",
             mobileImgClass: "max-md:object-[center_20%]",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSezhSeZx6PMdbAlcVSH2NTa8DsMG2FXm7isq_7lZAIjSzVxFA/viewform",
             rules: "/quiz rules and guidelines.pdf",
@@ -360,7 +360,7 @@ Prof. Gimy Jacob : 81292 68266`
             id: "debugging",
             title: "DEBUGGING",
             desc: "Find the bugs before they find you.",
-            image: "/debugg.jpeg",
+            image: "/debug.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSdd-YUds6d2fHOCwNBnVe0fT86T98LN5rFQnaSldME7Nc-W1A/viewform",
             rules: "/DebuggingContestGuidelines.pdf",
             details: `🐞✨ IRIS’26 IN-HOUSE TALENT HUNT – *DEBUGGING COMPETITION* ✨🐞
@@ -395,7 +395,7 @@ Abhijith M.S – 94964 33104`
             id: "logodesign",
             title: "LOGO DESIGN",
             desc: "Craft the identity of tomorrow.",
-            image: "/logodesign.jpeg",
+            image: "/LOGO DESIGN FINAL.jpg.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSe7yDbANMfo6mgtT9RFJzElE1hdH2sABwJXZ_eF0uzaFKT47A/viewform",
             rules: "/Rules and Guidelines Logo designing copm.pdf",
             details: `✨ IRIS’26 In-House Talent Hunt ✨
@@ -426,8 +426,8 @@ Prof. Aswathy Anand – 9544639568`
             id: "ctf",
             title: "CTF",
             desc: "Capture the Flag: Security challenge.",
-            image: "/ctfnew.jpeg",
-            modalImage: "/ctfnew.jpeg",
+            image: "/CTF FINL.jpg.jpeg",
+            modalImage: "/CTF FINL.jpg.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLScKshMv-MLdQeucJlnA_Xr9VYY_Y-JzQEOjVgKAWwpFnBty7w/viewform",
             rules: "/IRIS'26_CTF_Rules&Guidelines.pdf",
             cardZoom: 1,
