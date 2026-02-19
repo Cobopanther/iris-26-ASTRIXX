@@ -7,7 +7,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h2 className="text-[6vw] md:text-[4vw] leading-none font-bold tracking-tighter text-white/10 select-none">ASTRIXX</h2>
                         <a
-                            href="https://www.instagram.com/astrixx.cse_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            href="https://www.instagram.com/astrixx.cse_?igsh=ZWV3ejVtdXQ4c3Zn"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-400 hover:text-brand-accent transition-all duration-300 group ml-2"
