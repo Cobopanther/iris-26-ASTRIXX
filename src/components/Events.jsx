@@ -228,7 +228,7 @@ export default function Events() {
             id: "conclave",
             title: "CONCLAVE",
             desc: "A prestigious gathering of thought leaders and innovators.",
-            image: "/conclave final.jpg.jpeg",
+            image: "/conclave.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSegBDvQd3IiKJn4kj59F63uTzaDfQgqQLHm1Uu-IExTPvQFMA/viewform",
             details: `🎤✨ IRIS’26 – CONCLAVE 2026 ✨🎤
 
@@ -322,7 +322,7 @@ Sreyas - +91 75939 33552
             id: "quiz",
             title: "QUIZ",
             desc: "Test your tech knowledge against the best.",
-            image: "/quizfinal.jpeg",
+            image: "/quiz.jpeg",
             mobileImgClass: "max-md:object-[center_20%]",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSezhSeZx6PMdbAlcVSH2NTa8DsMG2FXm7isq_7lZAIjSzVxFA/viewform",
             rules: "/quiz rules and guidelines.pdf",
@@ -360,7 +360,7 @@ Prof. Gimy Jacob : 81292 68266`
             id: "debugging",
             title: "DEBUGGING",
             desc: "Find the bugs before they find you.",
-            image: "/debug.jpeg",
+            image: "/debugging.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSdd-YUds6d2fHOCwNBnVe0fT86T98LN5rFQnaSldME7Nc-W1A/viewform",
             rules: "/DebuggingContestGuidelines.pdf",
             details: `🐞✨ IRIS’26 IN-HOUSE TALENT HUNT – *DEBUGGING COMPETITION* ✨🐞
@@ -395,7 +395,7 @@ Abhijith M.S – 94964 33104`
             id: "logodesign",
             title: "LOGO DESIGN",
             desc: "Craft the identity of tomorrow.",
-            image: "/LOGO DESIGN FINAL.jpg.jpeg",
+            image: "/logodesign.jpeg",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSe7yDbANMfo6mgtT9RFJzElE1hdH2sABwJXZ_eF0uzaFKT47A/viewform",
             rules: "/Rules and Guidelines Logo designing copm.pdf",
             details: `✨ IRIS’26 In-House Talent Hunt ✨
