@@ -107,14 +107,12 @@ const About = () => {
     ];
 
     const irisProgram = [
-        { name: "Gouri Krishna", image: "/11.png" },
         { name: "Abhai Clement", image: "/9.png" },
+        { name: "Akhin Cheriyan", image: "/18.png" },
         { name: "Aswin S", image: "/21.png", zoom: 3 },
-        { name: "Nakshathra B V", image: "/14.png" },
+        { name: "Alphy Sajan", image: "/alpnew.png", zoom: 1.2 },
         { name: "Anand A B", image: "/3.png" },
         { name: "Abhishek Bruno", image: "/6.png" },
-        { name: "Muhammed Basil", image: "/17.png" },
-        { name: "Jiorijin Prakash", image: "/8.png" },
     ];
 
     const irisMedia = [
