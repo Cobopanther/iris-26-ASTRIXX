@@ -301,7 +301,7 @@ Prof. Greeshma Chacko: +91 99466 85090`
             link: "https://forms.gle/XHLN81WEgLB6NiER8",
             details: `ZYRA presents the Industrial Innovation Hackathon 2026✨ 
 
-24-hour innovation challenge by IEDC BMCE & IEEE SB BMCE, where ideas meet real industrial impact.
+24-hour innovation challenge by IEDC BMCE & IEEE SB BMCE in Association with Astrixx, where ideas meet real industrial impact.
 
 Work on real-world industry problem statements in collaboration with our Technical Partners, District Industries Centre, Kollam and MECON Cluster, and build solutions that address actual industrial challenges.
 
