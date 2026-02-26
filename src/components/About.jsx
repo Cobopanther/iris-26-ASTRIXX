@@ -107,6 +107,8 @@ const About = () => {
     ];
 
     const irisProgram = [
+        { name: "Gouri Krishna", image: "/11.png" },
+        { name: "Nakshathra B V", image: "/14.png" },
         { name: "Abhai Clement", image: "/9.png" },
         { name: "Akhin Cheriyan", image: "/18.png" },
         { name: "Aswin S", image: "/21.png", zoom: 3 },
